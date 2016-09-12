@@ -36,10 +36,13 @@
 | password | string | пароль |
 
 ```sql
-CREATE TABLE `actors` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
@@ -54,6 +57,17 @@ CREATE TABLE `actors` (
 | genre | enum string | жанр |
 | year | string | год выпуска |
 
+```sql
+CREATE TABLE `movies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `genre` varchar(50) NOT NULL,
+  `year` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
 Киноклубы (cinema_clubs):
 
 | Колонка | Тип | Назначение |
@@ -62,6 +76,16 @@ CREATE TABLE `actors` (
 | name | string | название клуба |
 | description | string | описание |
 | club_type | enum string | тип сообщества (приватное, публичное, профессиональное) 
+
+```sql
+CREATE TABLE `cinema_clubs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `club_type` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
 
 Член съемочной группы (film_crew):
 
@@ -72,6 +96,16 @@ CREATE TABLE `actors` (
 | last_name | string | фамилия члена съемочной площадки |
 | job_role | string | профессия |
 
+```sql
+CREATE TABLE `film_crew` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `job_role` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
 Актерский состав (actors):
 
 | Колонка | Тип | Назначение |
@@ -79,6 +113,15 @@ CREATE TABLE `actors` (
 | id      | primary key | уникальный идентификатор |
 | first_name | string | имя актера |
 | last_name | string | фамилия актера |
+
+```sql
+CREATE TABLE `actors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
 
 
 ### Технологии, которые будут использованы:
