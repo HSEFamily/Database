@@ -22,7 +22,7 @@
   - начать творить.
 
 ### Модель базы данных:
-![Database scheme] (db_scheme.png)
+![Database scheme] (komorebi_erd.png)
 
 Пользователи (users):
 
