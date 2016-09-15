@@ -5,12 +5,12 @@
 Тело:
 ```json
 {
-  'first_name' : '',
-  'last_name' : '',
-  'user_name': '',
-  'password' : '',
-  'email' : '',
-  'phone_number' : ''
+  "first_name" : "",
+  "last_name" : "",
+  "user_name": "",
+  "password" : "",
+  "email" : "",
+  'phone_number' : ""
 }
 ```
 Ответ:
