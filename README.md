@@ -123,7 +123,11 @@ CREATE TABLE `actors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 ### Спецификация REST API
-  
+
+--- 1. POST /user 
+
+--- 2. PUT /user
+
 ### Технологии, которые будут использованы:
   1. серверная часть:
     - postgresql
