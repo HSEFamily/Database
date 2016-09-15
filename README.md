@@ -124,10 +124,6 @@ CREATE TABLE `actors` (
 ```
 ### Спецификация REST API
   
-  ```http
-  POST /user 
-  ```
-
 ### Технологии, которые будут использованы:
   1. серверная часть:
     - postgresql
