@@ -10,19 +10,19 @@
   "user_name": "",
   "password" : "",
   "email" : "",
-  'phone_number' : ""
+  "phone_number" : ""
 }
 ```
 Ответ:
 ```json
 {
-  'id' : '',
-  'first_name' : '',
-  'last_name' : '',
-  'user_name': '',
-  'password' : '',
-  'email' : '',
-  'phone_number' : ''
+  "id" : "",
+  "first_name" : "",
+  "last_name" : "",
+  "user_name": "",
+  "password" : "",
+  "email" : "",
+  "phone_number" : ""
 }
 ```
 Назначение - регистрация пользователя в системе
