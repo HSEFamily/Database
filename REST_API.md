@@ -1,6 +1,6 @@
 # Спецификация REST API
 
-### POST /user
+### POST /user/new
 
 Тело:
 ```json
@@ -31,6 +31,39 @@ HTTP/1.1 200 OK
 }
 ```
 Назначение - регистрация пользователя в системе
+
+### POST /user/auth
+
+Тело:
+```json
+{
+  "first_name" : "",
+  "last_name" : "",
+  "user_name": "",
+  "password" : "",
+  "email" : "",
+  "phone_number" : ""
+}
+```
+Ответ:
+
+```http
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "__token__": "",
+  "id" : "",
+  "first_name" : "",
+  "last_name" : "",
+  "user_name": "",
+  "password" : "",
+  "email" : "",
+  "phone_number" : ""
+}
+```
+Назначение - аутентификация пользователя
 
 ### PUT /user
 
