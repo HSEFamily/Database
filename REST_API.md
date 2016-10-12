@@ -1,16 +1,20 @@
 # Спецификация REST API
 
+
+
 ### POST /user/new
 
 Тело:
 ```json
 {
-  "first_name" : "",
-  "last_name" : "",
-  "user_name": "",
-  "password" : "",
-  "email" : "",
-  "phone_number" : ""
+  "first_name" : "Лакрима",
+  "last_name" : "Умбрасон",
+  "user_name": "lacrima_umbra",
+  "password" : "17seconds",
+  "email" : "lacrima_umbra@batcave.com",
+  "phone_number" : "8-888-888-88-88",
+  "gender" : "female",
+  "birthday" : "1982-05-01"
 }
 ```
 Ответ:
@@ -21,13 +25,15 @@ HTTP/1.1 200 OK
 
 ```json
 {
-  "id" : "",
-  "first_name" : "",
-  "last_name" : "",
-  "user_name": "",
-  "password" : "",
-  "email" : "",
-  "phone_number" : ""
+  "id" : "888",
+  "first_name" : "Лакрима",
+  "last_name" : "Умбрасон",
+  "user_name": "lacrima_umbra",
+  "password" : "17seconds",
+  "email" : "lacrima_umbra@batcave.com",
+  "phone_number" : "8-888-888-88-88",
+  "gender" : "female",
+  "birthday" : "1982-05-01"
 }
 ```
 Назначение - регистрация пользователя в системе
@@ -64,13 +70,15 @@ HTTP/1.1 200 OK
 
 ```json
 {
-  "id" : "",
-  "first_name" : "",
-  "last_name" : "",
-  "user_name": "",
-  "password" : "",
-  "email" : "",
-  "phone_number" : ""
+  "id" : "888",
+  "first_name" : "Лакрима",
+  "last_name" : "Умбрасон",
+  "user_name": "lacrima_umbra",
+  "password" : "17seconds",
+  "email" : "lacrima_umbra@batcave.com",
+  "phone_number" : "8-888-888-88-88",
+  "gender" : "female",
+  "birthday" : "1982-05-01"
 }
 ```
 
@@ -86,13 +94,15 @@ sectoken - секретный токен
 Тело:
 ```json
 {
-  "id" : "",
-  "first_name" : "",
-  "last_name" : "",
-  "user_name": "",
-  "password" : "",
-  "email" : "",
-  "phone_number" : ""
+  "id" : "888",
+  "first_name" : "Лакрима",
+  "last_name" : "Умбрасон",
+  "user_name": "lacrima_umbra",
+  "password" : "17seconds",
+  "email" : "lacrima_umbra@batcave.com",
+  "phone_number" : "8-888-888-88-88",
+  "gender" : "female",
+  "birthday" : "1982-05-01"
 }
 ```
 
@@ -103,13 +113,15 @@ HTTP/1.1 200 OK
 
 ```json
 {
-  "id" : "",
-  "first_name" : "",
-  "last_name" : "",
-  "user_name": "",
-  "password" : "",
-  "email" : "",
-  "phone_number" : ""
+  "id" : "888",
+  "first_name" : "Лакрима",
+  "last_name" : "Умбрасон",
+  "user_name": "lacrima_umbra",
+  "password" : "17seconds",
+  "email" : "lacrima_umbra@batcave.com",
+  "phone_number" : "8-888-888-88-88",
+  "gender" : "female",
+  "birthday" : "1982-05-01"
 }
 ```
 Назначение - обновление персональных данных пользователя
