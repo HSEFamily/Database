@@ -1,7 +1,21 @@
 # Спецификация REST API
 
-
-
+### Краткое описание запросов
+  
+  1. POST /user/new
+  2. POST /user/auth
+  3. PUT /user
+  4. DELETE /user/{id}
+  5. POST /user/{id}/club
+  6. PUT /club/{id}
+  7. DELETE /club/{id}
+  6. GET /user/{id}/clubs
+  7. GET /club/{id}/members
+  8. POST /user/{id}/movie
+  9. GET /user/{id}/movies
+  10. DELETE /user/{id}/movie
+  11. GET /movie/{id}/info
+  
 ### POST /user/new
 
 Тело:
