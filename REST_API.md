@@ -15,8 +15,8 @@
   11. GET /movies
   12. POST /user/{id}/movie
   13. GET /user/{id}/movies
-  14. DELETE /user/{id}/movie/{id}
-  15. PUT /user/{id}/movie/{id}
+  14. DELETE /user/{userId}/movie/{movieId}
+  15. PUT /user/{userId}/movie/{movieId}
   
 ### POST /user/new
 
