@@ -154,7 +154,30 @@ id - уникальный идентификатор пользователя
 
 ### POST /user/{ownerId}/club
 
+Тело:
+
+```json
+{
+  "name" : "Batcave",
+  "description" : "Movies inspired by gothic subculture, per se"
+}
+```
+
+Ответ:
+
+```json
+{
+  "id" : 1979
+  "name" : "Batcave",
+  "description" : "Movies inspired by gothic subculture, per se"
+}
+```
+
+Назначение - создание клуба (пользователь, по чей инициативе был создан клуб, становится его владельцем и админом)
+
 ### PUT /club/{id}
+
+
 
 ### DELETE /club/{id}
 
