@@ -71,14 +71,14 @@
 ```
 Назначение - аутентификация пользователя (получение секретного токена)
 
-### GET /user/{id} 
+### GET /user/{id}?sectoken={sectoken} 
 
-Тело:
-```json
-{
-  "sectoken" : "6F9619FF-8B86-D011-B42D-00CF4FC964FF"
-}
+Параметры:
+
+```http
+sectoken - секретный ключ (128-битный GUID)
 ```
+
 Ответ:
 
 ```json
@@ -141,18 +141,20 @@ sectoken - секретный токен
 ### DELETE /user/{id}?sectoken={sectoken}
 
 Параметры:
+
 ```http
 sectoken - секретный токен
 ```
 
 Параметры:
+
 ```http
 id - уникальный идентификатор пользователя
 ```
 
 Назначение - удаление пользовательского аккаунта
 
-### POST /user/{ownerId}/club
+### POST /user/{ownerId}/club?sectoken={sectoken} 
 
 Тело:
 
@@ -175,7 +177,7 @@ id - уникальный идентификатор пользователя
 
 Назначение - создание клуба (пользователь, по чей инициативе был создан клуб, становится его владельцем и админом)
 
-### PUT /club
+### PUT /club?sectoken={sectoken} 
 
 Тело:
 
@@ -189,7 +191,7 @@ id - уникальный идентификатор пользователя
 
 Назначение - обновление данных о клубе
 
-### DELETE /club/{id}
+### DELETE /club/{id}?sectoken={sectoken} 
 
 Параметры:
 
@@ -199,7 +201,7 @@ id - идентификатор клуба
 
 Назначение - удаление клуба
 
-### GET /user/{id}/clubs
+### GET /user/{id}/clubs?sectoken={sectoken} 
 
 Параметры:
 
@@ -221,7 +223,7 @@ id - идентификатор пользователя
 
 Назначение - поиск клубов, в которых пользователь состоит
 
-### GET /club/{id}/members
+### GET /club/{id}/members?sectoken={sectoken} 
 
 Параметры:
 
@@ -249,7 +251,7 @@ id - идентификатор клуба
 
 Назначние - поиск членов клуба
 
-### GET /movies?sq={sq}
+### GET /movies?sq={sq}&sectoken={sectoken} 
 
 Параметры:
 
@@ -294,7 +296,7 @@ sq - название фильма или фильмов
 
 Назначение - поиск фильма или фильмов по названию
 
-### POST /user/{userId}/movie/{movieId}
+### POST /user/{userId}/movie/{movieId}?sectoken={sectoken} 
 
 Параметры:
 
@@ -338,7 +340,7 @@ movieId - идентификатор фильма
 
 Назначение - сохранение фильма в личной коллекции пользователя
 
-### GET /user/{id}/movies
+### GET /user/{id}/movies?sectoken={sectoken} 
 
 Параметры:
 
@@ -382,7 +384,7 @@ id - идентификатор пользователя
 
 Назначение - поиск фильмов в личной коллекции пользователя
 
-### DELETE /user/{userId}/movie/{movieId}
+### DELETE /user/{userId}/movie/{movieId}?sectoken={sectoken} 
 
 Параметры:
 
@@ -393,7 +395,7 @@ movieId - идентификатор фильма
 
 Назначение - удаление фильма из личной коллекции
 
-### PUT /user/{userId}/movie/{movieId}
+### PUT /user/{userId}/movie/{movieId}?sectoken={sectoken} 
 
 Параметры:
 
