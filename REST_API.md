@@ -12,11 +12,14 @@
   8. DELETE /club/{id}
   9. GET /user/{id}/clubs
   10. GET /club/{id}/members
-  11. GET /movies
-  12. POST /user/{id}/movie
-  13. GET /user/{id}/movies
-  14. DELETE /user/{userId}/movie/{movieId}
-  15. PUT /user/{userId}/movie/{movieId}
+  11. POST /club/member/{id}
+  12. DELETE /club/member/{id}
+  13. GET /clubs
+  14. GET /movies
+  15. POST /user/{id}/movie
+  16. GET /user/{id}/movies
+  17. DELETE /user/{userId}/movie/{movieId}
+  18. PUT /user/{userId}/movie/{movieId}
   
 ### POST /user/new
 
