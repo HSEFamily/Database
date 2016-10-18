@@ -254,6 +254,15 @@ id - идентификатор клуба
 
 Назначние - поиск членов клуба
 
+### POST /club/member/{id}?sectoken={sectoken}
+
+
+
+### DELETE /club/member/{id}
+
+### GET /clubs
+
+
 ### GET /movies?sq={sq}&sectoken={sectoken} 
 
 Параметры:
