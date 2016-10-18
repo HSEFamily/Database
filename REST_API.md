@@ -12,8 +12,8 @@
   8. DELETE /club/{id}
   9. GET /user/{id}/clubs
   10. GET /club/{id}/members
-  11. POST /club/member/{id}
-  12. DELETE /club/member/{id}
+  11. POST /club/member
+  12. DELETE /club/{clubId}/member/{memberId}
   13. GET /clubs
   14. GET /movies
   15. POST /user/{id}/movie
@@ -254,14 +254,39 @@ id - идентификатор клуба
 
 Назначние - поиск членов клуба
 
-### POST /club/member/{id}?sectoken={sectoken}
+### POST /club/member?sectoken={sectoken}
 
+Тело:
 
+```json
+{
+  "user_id" : 1919,
+  "club_id" : 1979,
+  "user_role" : "admin"
+}
+```
 
-### DELETE /club/member/{id}
+Назначение - добавление пользователя в клуб
 
-### GET /clubs
+### DELETE /club/{clubId}/member/{memberId}?sectoken={sectoken}
 
+Параметры:
+
+```http
+clubId - идентификатор клуба,
+memberId - идентификатор члена клуба
+```
+Назначение - удаление члена клуба
+
+### GET /clubs?sq={sq}&sectoken={sectoken}
+
+Параметры:
+
+```http
+sq - название клуба или клубов
+```
+
+Назначение - поиск клуба или клубов по названию
 
 ### GET /movies?sq={sq}&sectoken={sectoken} 
 
