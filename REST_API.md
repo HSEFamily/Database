@@ -5,14 +5,14 @@
   1. POST /user/new
   2. POST /user/auth
   3. GET /user/{id}
-  4. PUT /user
+  4. PUT /user/{id}
   5. DELETE /user/{id}
   6. POST /user/{id}/club
   7. PUT /club/{id}
   8. DELETE /club/{id}
   9. GET /user/{id}/clubs
   10. GET /club/{id}/members
-  11. POST /club/member
+  11. PUT /club/{clubId}/member/{memberId}
   12. DELETE /club/{clubId}/member/{memberId}
   13. GET /clubs
   14. GET /movies
@@ -100,7 +100,7 @@ sectoken - секретный ключ (128-битный GUID)
 
 Назначение - получения информации о пользователе
 
-### PUT /user?sectoken={sectoken}
+### PUT /user/{id}?sectoken={sectoken}
 
 Параметры:
 
@@ -112,7 +112,6 @@ sectoken - секретный токен
 
 ```json
 {
-  "id" : 1919,
   "first_name" : "Лакрима",
   "last_name" : "Умбрасон",
   "user_name": "lacrima_umbra",
@@ -180,13 +179,12 @@ id - уникальный идентификатор пользователя
 
 Назначение - создание клуба (пользователь, по чей инициативе был создан клуб, становится его владельцем и админом)
 
-### PUT /club?sectoken={sectoken} 
+### PUT /club/{id}?sectoken={sectoken} 
 
 Тело:
 
 ```json
 {
-  "id" : 1979,
   "name" : "Batcave",
   "description" : "Movies inspired by gothic subculture, per se"
 }
@@ -254,16 +252,13 @@ id - идентификатор клуба
 
 Назначние - поиск членов клуба
 
-### POST /club/member?sectoken={sectoken}
+### PUT /club/{clubId}/member/{memberId}?sectoken={sectoken}
 
-Тело:
+Параметры:
 
-```json
-{
-  "user_id" : 1919,
-  "club_id" : 1979,
-  "user_role" : "admin"
-}
+```http
+clubId - идентификатор клуба,
+memberId - идентификатор члена клуба
 ```
 
 Назначение - добавление пользователя в клуб
