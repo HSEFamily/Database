@@ -29,7 +29,7 @@
 {
   "first_name" : "Лакрима",
   "last_name" : "Умбрасон",
-  "user_name": "lacrima_umbra",
+  "username": "lacrima_umbra",
   "password" : "17seconds",
   "email" : "lacrima_umbra@batcave.com",
   "phone_number" : "8-888-888-88-88",
@@ -44,7 +44,7 @@
   "id" : "888",
   "first_name" : "Лакрима",
   "last_name" : "Умбрасон",
-  "user_name": "lacrima_umbra",
+  "username": "lacrima_umbra",
   "password" : "17seconds",
   "email" : "lacrima_umbra@batcave.com",
   "phone_number" : "8-888-888-88-88",
@@ -60,7 +60,7 @@
 
 ```json
 {
-  "user_name": "lacrima_umbra",
+  "username": "lacrima_umbra",
   "password" : "17seconds"
 }
 ```
@@ -89,7 +89,7 @@ sectoken - секретный ключ (128-битный GUID)
   "id" : 1919,
   "first_name" : "Лакрима",
   "last_name" : "Умбрасон",
-  "user_name": "lacrima_umbra",
+  "username": "lacrima_umbra",
   "password" : "17seconds",
   "email" : "lacrima_umbra@batcave.com",
   "phone_number" : "8-888-888-88-88",
@@ -114,7 +114,7 @@ sectoken - секретный токен
 {
   "first_name" : "Лакрима",
   "last_name" : "Умбрасон",
-  "user_name": "lacrima_umbra",
+  "username": "lacrima_umbra",
   "password" : "17seconds",
   "email" : "lacrima_umbra@batcave.com",
   "phone_number" : "8-888-888-88-88",
@@ -130,7 +130,7 @@ sectoken - секретный токен
   "id" : 1919,
   "first_name" : "Лакрима",
   "last_name" : "Умбрасон",
-  "user_name": "lacrima_umbra",
+ "username": "lacrima_umbra",
   "password" : "17seconds",
   "email" : "lacrima_umbra@batcave.com",
   "phone_number" : "8-888-888-88-88",
@@ -240,7 +240,7 @@ id - идентификатор клуба
     "id" : 1919,
     "first_name" : "Лакрима",
     "last_name" : "Умбрасон",
-    "user_name": "lacrima_umbra",
+    "username": "lacrima_umbra",
     "password" : "17seconds",
     "email" : "lacrima_umbra@batcave.com",
     "phone_number" : "8-888-888-88-88",
