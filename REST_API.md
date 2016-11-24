@@ -68,8 +68,18 @@
 
 ```json
 {
-  "sectoken" : "6F9619FF-8B86-D011-B42D-00CF4FC964FF",
-  "user_id" : 1919
+  "user": {
+    "gender": "female",
+    "password": "17seconds",
+    "id": 25687,
+    "last_name": "Умбрасон",
+    "birthday": "Sat, 01 May 1982 00:00:00 GMT",
+    "email": "lacrima_umbra@batcave.com",
+    "username": "lacrima_batcave",
+    "phone_number": "8-888-888-88-88",
+    "first_name": "Лакрима"
+  },
+  "sectoken": "21fed01e3084ea42dd1a984e03589c7079a152df419fd7b15672b57118825d50"
 }
 ```
 Назначение - аутентификация пользователя (получение секретного токена)
