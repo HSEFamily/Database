@@ -110,7 +110,7 @@ sectoken - секретный ключ (128-битный GUID)
 
 Назначение - получения информации о пользователе
 
-### PUT /user/{id}?sectoken={sectoken}
+### PUT /user?sectoken={sectoken}
 
 Параметры:
 
