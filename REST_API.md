@@ -12,7 +12,7 @@
   8. DELETE /club/{id}
   9. GET /user/{id}/clubs
   10. GET /club/{id}/members
-  11. PUT /club/{clubId}/member/{memberId}
+  11. POST /club/{clubId}/member/{memberId}
   12. DELETE /club/{clubId}/member/{memberId}
   13. GET /clubs
   14. GET /movies
@@ -251,7 +251,6 @@ id - идентификатор клуба
     "first_name" : "Лакрима",
     "last_name" : "Умбрасон",
     "username": "lacrima_umbra",
-    "password" : "17seconds",
     "email" : "lacrima_umbra@batcave.com",
     "phone_number" : "8-888-888-88-88",
     "gender" : "female",
@@ -262,7 +261,7 @@ id - идентификатор клуба
 
 Назначние - поиск членов клуба
 
-### PUT /club/{clubId}/member/{memberId}?sectoken={sectoken}
+### POST /club/{clubId}/member/{memberId}?sectoken={sectoken}
 
 Параметры:
 
