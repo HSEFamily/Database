@@ -134,7 +134,7 @@ CREATE TABLE movies_year_count
 );
 ```
 
-### Ограничения
+### Внешние ключи
 ```sql
 ALTER TABLE cast_movies ADD FOREIGN KEY (actor_id) REFERENCES persons (id);
 ALTER TABLE cast_movies ADD FOREIGN KEY (movie_id) REFERENCES movies (id);
@@ -146,6 +146,15 @@ ALTER TABLE users_clubs ADD FOREIGN KEY (user_id) REFERENCES users (id);
 ALTER TABLE users_clubs ADD FOREIGN KEY (club_id) REFERENCES clubs (id);
 ALTER TABLE users_movies ADD FOREIGN KEY (user_id) REFERENCES users (id);
 ALTER TABLE users_movies ADD FOREIGN KEY (movie_id) REFERENCES movies (id);
+```
+
+### Ограничения
+
+```sql
+ALTER TABLE users ADD CONSTRAINT email_constraint CHECK (email ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$');
+ALTER TABLE users ADD CONSTRAINT password_constraint CHECK (password ~* '^[A-Za-z0-9]+$');
+ALTER TABLE users ADD CONSTRAINT gender_constraint CHECK (gender = 'male' or gender = 'female');
+ALTER TABLE users ADD CONSTRAINT birthday_constraint CHECK (birthday <= CURRENT_DATE)
 ```
 
 ### Индексы
