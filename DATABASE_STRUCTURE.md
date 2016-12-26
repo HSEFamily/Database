@@ -153,6 +153,8 @@ ALTER TABLE users_movies ADD FOREIGN KEY (movie_id) REFERENCES movies (id);
 CREATE INDEX person_name_idx ON persons (name);
 CREATE UNIQUE INDEX username_unique ON users (username);
 CREATE INDEX username_idx ON users (username);
+CREATE INDEX movie_name_idx ON movies (name);
+CREATE INDEX club_name_idx ON clubs (name);
 ```
 
 ### Представления
