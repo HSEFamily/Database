@@ -134,7 +134,7 @@ CREATE TABLE movies_year_count
 );
 ```
 
-## Ограничения
+### Ограничения
 ```sql
 ALTER TABLE cast_movies ADD FOREIGN KEY (actor_id) REFERENCES persons (id);
 ALTER TABLE cast_movies ADD FOREIGN KEY (movie_id) REFERENCES movies (id);
@@ -148,14 +148,14 @@ ALTER TABLE users_movies ADD FOREIGN KEY (user_id) REFERENCES users (id);
 ALTER TABLE users_movies ADD FOREIGN KEY (movie_id) REFERENCES movies (id);
 ```
 
-## Индексы
+### Индексы
 ```sql
 CREATE INDEX person_name_idx ON persons (name);
 CREATE UNIQUE INDEX username_unique ON users (username);
 CREATE INDEX username_idx ON users (username);
 ```
 
-## Представления
+### Представления
 ```sql
 CREATE VIEW cast_movies_view AS
   SELECT p.*, c.movie_id FROM persons p INNER JOIN cast_movies c ON p.id = c.actor_id;
@@ -193,4 +193,22 @@ CREATE VIEW movies_view AS SELECT m.*,
     WHERE movie_id = m.id AND crew_role = 'producer'
   ) producers
 FROM movies m;
+CREATE VIEW genre_year_popularity AS
+  SELECT unnest(genre) genre, EXTRACT(year FROM m.year) movies_year, COUNT(*) popularity FROM movies m GROUP BY m.year, genre;
+
+CREATE VIEW movies_year_count AS
+  SELECT EXTRACT(year from m.year) movies_year, COUNT(*) movies_count FROM movies m GROUP BY movies_year;
+
+CREATE VIEW country_movies_count AS
+  SELECT unnest(country) country, COUNT(*) movies_count FROM movies m GROUP BY m.country ORDER BY movies_count ASC;
+
+CREATE VIEW movie_watch_freq AS
+  SELECT name, COUNT(*) FROM movies INNER JOIN users_movies ON movies.id = users_movies.movie_id
+INNER JOIN users ON users_movies.user_id = users.id
+GROUP BY movie_id, name;
+
+CREATE VIEW movie_popularity AS
+SELECT name, avg(rating)::DOUBLE PRECISION avg_rating FROM movies INNER JOIN users_movies ON movies.id = users_movies.movie_id
+INNER JOIN users ON users_movies.user_id = users.id
+GROUP BY movie_id, name ORDER BY avg_rating DESC ;
 ```
