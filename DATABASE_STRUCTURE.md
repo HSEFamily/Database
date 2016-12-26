@@ -1,6 +1,6 @@
-### Структура базы данных
+## Структура базы данных
 
-## Таблицы
+### Таблицы
 
 ```sql
 CREATE TABLE cast_movies
@@ -132,4 +132,65 @@ CREATE TABLE movies_year_count
     movies_year DOUBLE PRECISION,
     movies_count BIGINT
 );
+```
+
+## Ограничения
+```sql
+ALTER TABLE cast_movies ADD FOREIGN KEY (actor_id) REFERENCES persons (id);
+ALTER TABLE cast_movies ADD FOREIGN KEY (movie_id) REFERENCES movies (id);
+ALTER TABLE chat_messages ADD FOREIGN KEY (from_id) REFERENCES users (id);
+ALTER TABLE chat_messages ADD FOREIGN KEY (to_id) REFERENCES users (id);
+ALTER TABLE crew_movies ADD FOREIGN KEY (crew_id) REFERENCES persons (id);
+ALTER TABLE crew_movies ADD FOREIGN KEY (movie_id) REFERENCES movies (id);
+ALTER TABLE users_clubs ADD FOREIGN KEY (user_id) REFERENCES users (id);
+ALTER TABLE users_clubs ADD FOREIGN KEY (club_id) REFERENCES clubs (id);
+ALTER TABLE users_movies ADD FOREIGN KEY (user_id) REFERENCES users (id);
+ALTER TABLE users_movies ADD FOREIGN KEY (movie_id) REFERENCES movies (id);
+```
+
+## Индексы
+```sql
+CREATE INDEX person_name_idx ON persons (name);
+CREATE UNIQUE INDEX username_unique ON users (username);
+CREATE INDEX username_idx ON users (username);
+```
+
+## Представления
+```sql
+CREATE VIEW cast_movies_view AS
+  SELECT p.*, c.movie_id FROM persons p INNER JOIN cast_movies c ON p.id = c.actor_id;
+--
+CREATE VIEW crew_movies_view AS
+  SELECT p.name, c.crew_role, c.movie_id FROM persons p INNER JOIN crew_movies c ON p.id = c.crew_id;
+
+CREATE VIEW movies_view AS SELECT m.*,
+  ARRAY(
+      SELECT name FROM cast_movies_view
+      WHERE movie_id = m.id
+  ) actors,
+  ARRAY(
+    SELECT name FROM crew_movies_view
+    WHERE movie_id = m.id AND crew_role = 'director'
+  ) directors,
+  ARRAY(
+    SELECT name FROM crew_movies_view
+    WHERE movie_id = m.id AND crew_role = 'screenwriter'
+  ) screenwriters,
+  ARRAY(
+    SELECT name FROM crew_movies_view
+    WHERE movie_id = m.id AND crew_role = 'operator'
+  ) operators,
+  ARRAY(
+    SELECT name FROM crew_movies_view
+    WHERE movie_id = m.id AND crew_role = 'editor'
+  ) editors,
+  ARRAY(
+    SELECT name FROM crew_movies_view
+    WHERE movie_id = m.id AND crew_role = 'composer'
+  ) composers,
+  ARRAY(
+    SELECT name FROM crew_movies_view
+    WHERE movie_id = m.id AND crew_role = 'producer'
+  ) producers
+FROM movies m;
 ```
